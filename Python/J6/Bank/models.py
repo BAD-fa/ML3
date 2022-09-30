@@ -49,18 +49,22 @@ class Bank:
 
 class BankAccount:
     def __init__(self, bank, customer):
-        self.balance = 0
+        self._balance = 0
         self.bank = bank
         self.customer = customer
         self.history = []
+
+    @property
+    def balance(self):
+        return self._balance
 
     def withdraw(self, amonut: int):
         if amonut > self.balance:
             raise Exception("Not enough balance")
 
-        self.balance -= amonut
+        self._balance -= amonut
 
         return self.balance
 
     def deposit(self, amount: int):
-        self.balance += amount
+        self._balance += amount
