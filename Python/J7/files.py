@@ -2,18 +2,12 @@ import time
 
 my_file = open("test.txt", "w")
 
-my_file.write("\n")
-my_file.write("\n")
-my_file.write("\n")
-
-for i in range(10):
+for i in range(1000):
     my_file.write(f"this is the {i+20} line\n")
     print(my_file.tell())
 
 my_file.flush()
 # my_file.close()
-
-time.sleep(10)
 #
 #
 # my_file.seek(0)
